@@ -1,0 +1,21 @@
+version: 2
+sources:
+  - name: curated
+    schema: curated
+    tables:
+      - name: events
+        description: Accepted canonical events, excluding pending excessively late facts until explicit correction.
+      - name: dim_players
+      - name: dim_servers
+      - name: player_match
+      - name: match_status
+      - name: sessions
+      - name: server_windows
+  - name: presentation
+    schema: mart
+    tables:
+      - name: leaderboard
+      - name: match_overview
+      - name: match_timeline
+      - name: server_health
+      - name: pipeline_health

@@ -1,0 +1,27 @@
+slice_name: "Run freshness \u2014 UTC"
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 8__table
+  viz_type: table
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  query_mode: raw
+  all_columns:
+  - run_id
+  - source_last_event_at
+  - processed_at
+  - pending_late
+  include_time: false
+  order_by_cols: []
+  page_length: 15
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+query_context: null
+cache_timeout: null
+uuid: 42cac9b0-bdc2-4824-884c-e34542a68c86
+version: 1.0.0
+dataset_uuid: c5551fc6-9c55-4667-9d6d-449cb922e883

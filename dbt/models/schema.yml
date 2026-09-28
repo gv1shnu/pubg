@@ -1,0 +1,71 @@
+version: 2
+models:
+  - name: stg_events
+    description: One row per namespace/run/source event, immutable source identity; timestamps are UTC.
+    columns:
+      - name: event_key
+        tests: [unique, not_null]
+      - name: event_type
+        tests:
+          - accepted_values:
+              values: [match_created, match_started, zone_changed, match_finished, damage_dealt, player_eliminated, player_position_sample, player_connected, player_disconnected, player_reconnected, server_sample]
+  - name: dim_player
+    description: Player membership at namespace/run/match/player grain.
+    columns:
+      - name: player_match_key
+        tests: [unique, not_null]
+  - name: dim_server
+    description: Synthetic server at namespace/run/server grain.
+    columns:
+      - name: server_key
+        tests: [unique, not_null]
+  - name: fct_player_match
+    description: One row per namespace/run/match/player. Kills are canonical elimination counts; damage is summed actual health reduction; placement comes from unique elimination outcomes plus the manifest winner.
+    columns:
+      - name: player_match_key
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('dim_player')
+              field: player_match_key
+      - name: kills
+        description: Canonical player_eliminated facts attributed to the attacker.
+      - name: damage
+        description: Sum of damage_dealt health reduction, never repeated delivery count.
+      - name: placement
+        description: Finishing place, nullable while running; average only over completed eligible matches.
+  - name: fct_sessions
+    description: Latest source sequence per session, not a count of connection events. Online players is distinct connected player count; connections is connected session count.
+    columns:
+      - name: session_key
+        tests: [unique, not_null]
+  - name: fct_server_windows
+    description: Ten-second event-time windows. p95 pools synthetic latency observations; packet loss is summed lost/sent; CPU/memory and tick duration are sample means. Final partial windows remain provisional without a source completeness manifest.
+    columns:
+      - name: window_key
+        tests: [unique, not_null]
+      - name: server_key
+        tests:
+          - relationships:
+              to: ref('dim_server')
+              field: server_key
+      - name: latency_p95_ms
+        description: Exact percentile_cont(.95) over underlying synthetic observation values; never average p95 values.
+      - name: packet_loss_pct
+        description: 100 * sum(lost packets) / sum(sent packets).
+      - name: tick_ms
+        description: Mean synthetic server tick milliseconds; compare against target_tick_ms.
+  - name: tableau_leaderboard
+    description: Live SQL at player-match grain; project score is configurable kill points plus placement points, never an official game formula. Wins and denominator include final/corrected matches only. Sort score DESC,wins DESC,kills DESC,player_id ASC.
+    columns:
+      - name: status
+        tests:
+          - accepted_values:
+              values: [running, provisional, final, corrected]
+      - name: completed_eligible_matches
+        description: Win rate denominator; one for a reconciled completed player-match, otherwise zero.
+      - name: processed_at
+        description: Latest contributing gameplay processing timestamp, independent of browser render freshness.
+  - name: tableau_pipeline_health
+    description: Actual installation-wide Prometheus observations. Committed lag is end offset minus checkpoint-committed next offset per topic/partition. Rate measures persisted canonical events/sec; duplicates and checkpoint counters can reset on job restart. Wall-clock delay and event-time age are separate. Missing metrics are absent, not zero.

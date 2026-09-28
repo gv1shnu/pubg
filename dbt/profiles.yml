@@ -1,0 +1,12 @@
+battleground:
+  target: demo
+  outputs:
+    demo:
+      type: postgres
+      host: "{{ env_var('PGHOST', 'postgres') }}"
+      port: 5432
+      user: transformer
+      password: "{{ env_var('TRANSFORM_PASSWORD') }}"
+      dbname: telemetry
+      schema: mart
+      threads: 1

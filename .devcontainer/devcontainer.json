@@ -1,0 +1,12 @@
+{
+  "name": "Battleground Telemetry cloud workspace",
+  "image": "mcr.microsoft.com/devcontainers/base:1-bookworm",
+  "features": {"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}},
+  "forwardPorts": [8081, 8080, 9090],
+  "portsAttributes": {
+    "8081": {"label": "Private Flink admin", "onAutoForward": "silent"},
+    "8080": {"label": "Private Airflow admin", "onAutoForward": "silent"},
+    "9090": {"label": "Private Prometheus", "onAutoForward": "silent"}
+  },
+  "postCreateCommand": "mkdir -p artifacts tableau/exports && printf 'Check Codespaces quota, then run make bootstrap. No services started automatically.\\n'"
+}

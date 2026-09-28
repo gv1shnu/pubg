@@ -1,0 +1,294 @@
+table_name: bt_server_health
+main_dttm_col: window_start
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: null
+schema: mart
+sql: select * from mart.server_health where namespace='live'
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 9f9f87fe-f49b-4f21-a801-9c1c3d892e53
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: source_last_event_at
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITH TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: mart_updated_at
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITH TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: processed_at
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITH TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: window_start
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: TIMESTAMP WITH TIME ZONE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: latency_p95_ms
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: target_tick_ms
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: cpu_pct
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: memory_pct
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: tick_ms
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DOUBLE PRECISION
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: corrected
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: BOOLEAN
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: incident
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: BOOLEAN
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: current_online_players
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: sample_count
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: current_connections
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: BIGINT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: packet_loss_pct
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: NUMERIC
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: packets_sent
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: NUMERIC
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: packets_lost
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: NUMERIC
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: server_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: run_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: namespace
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: status
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: region
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 82646759-aaeb-4de8-a56e-f20175403480

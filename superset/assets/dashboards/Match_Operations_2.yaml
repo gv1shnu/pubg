@@ -1,0 +1,324 @@
+dashboard_title: Match Operations
+description: null
+css: .dashboard-content {background:#11151b;color:#e6eaf0;} .dashboard-component-chart-holder,.dashboard-component-tabs-content
+  {background:#1c232c!important;border-radius:8px;} .dashboard-component-header,.header-title,.chart-header,.dashboard-markdown
+  {color:#e6eaf0!important;} .dashboard-component-chart-holder table,.dashboard-component-chart-holder
+  th,.dashboard-component-chart-holder td {background:#1c232c!important;color:#e6eaf0!important;border-color:#37414e!important;}
+  .big_number_total {color:#e8b45b!important;}.dashboard-component-chart-holder .header-title,.dashboard-component-chart-holder
+  .slice-header,.dashboard-component-chart-holder [class*=Header] {color:#e6eaf0!important;}
+  .dashboard-component-chart-holder .header-line {color:#e8b45b!important;} .dashboard-component-chart-holder
+  svg text {fill:#c8d3df;}.dashboard-component-chart-holder .header-title a {color:#e6eaf0!important;}
+  .dashboard-component-chart-holder label {color:#c8d3df!important;}
+slug: match-operations
+certified_by: null
+certification_details: null
+published: true
+uuid: 2e3331ab-ab7a-4ddf-b38a-ef65dcb6c2f9
+position:
+  DASHBOARD_VERSION_KEY: v2
+  ROOT_ID:
+    id: ROOT_ID
+    type: ROOT
+    children:
+    - GRID_ID
+  GRID_ID:
+    id: GRID_ID
+    type: GRID
+    children:
+    - HEADER-match-operations
+    - ROW-match-operations-0
+    - ROW-match-operations-1
+    - ROW-match-operations-2
+    - ROW-N-2NVHEIN5
+    parents:
+    - ROOT_ID
+  HEADER-match-operations:
+    id: HEADER-match-operations
+    type: MARKDOWN
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      code: "### Match Operations\nSynthetic gameplay and server telemetry \xB7 UTC\
+        \ \xB7 Project scoring, no official affiliation.\nSelect exactly one run.\
+        \ Final means reconciled; provisional means incomplete. Read timestamps before\
+        \ interpreting freshness."
+      height: 14
+      width: 12
+  ROW-match-operations-0:
+    id: ROW-match-operations-0
+    type: ROW
+    children:
+    - CHART-7
+    - CHART-8
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-7:
+    id: CHART-7
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-match-operations-0
+    meta:
+      chartId: 7
+      sliceName: Running matches
+      width: 6
+      height: 42
+  CHART-8:
+    id: CHART-8
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-match-operations-0
+    meta:
+      chartId: 8
+      sliceName: Reconciled matches
+      width: 6
+      height: 42
+  ROW-match-operations-1:
+    id: ROW-match-operations-1
+    type: ROW
+    children:
+    - CHART-9
+    - CHART-10
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-9:
+    id: CHART-9
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-match-operations-1
+    meta:
+      chartId: 9
+      sliceName: Alive players
+      width: 6
+      height: 42
+  CHART-10:
+    id: CHART-10
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-match-operations-1
+    meta:
+      chartId: 10
+      sliceName: Eliminations per 10 seconds
+      width: 6
+      height: 42
+  ROW-match-operations-2:
+    id: ROW-match-operations-2
+    type: ROW
+    children:
+    - CHART-11
+    - CHART-12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-11:
+    id: CHART-11
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-match-operations-2
+    meta:
+      chartId: 11
+      sliceName: Manifest completeness
+      width: 6
+      height: 42
+  CHART-12:
+    id: CHART-12
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-match-operations-2
+    meta:
+      chartId: 12
+      sliceName: Final placements
+      width: 6
+      height: 42
+  ROW-N-2NVHEIN5:
+    children:
+    - CHART-LWOJP7M4
+    - CHART-RDKX0YQS
+    - CHART-6FZX54U3
+    - CHART-P150C9GH
+    - CHART-QMHX77PC
+    - CHART-IKHYLGTE
+    id: ROW-N-2NVHEIN5
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    type: ROW
+    parents:
+    - ROOT_ID
+    - GRID_ID
+  CHART-LWOJP7M4:
+    children: []
+    id: CHART-LWOJP7M4
+    meta:
+      chartId: 12
+      height: 50
+      sliceName: Final placements
+      uuid: 1a66e093-08e7-42dc-9b81-21534099fc15
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-2NVHEIN5
+  CHART-RDKX0YQS:
+    children: []
+    id: CHART-RDKX0YQS
+    meta:
+      chartId: 8
+      height: 50
+      sliceName: Reconciled matches
+      uuid: 762376d8-ceb4-4bdb-b7c9-dc86ce295dba
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-2NVHEIN5
+  CHART-6FZX54U3:
+    children: []
+    id: CHART-6FZX54U3
+    meta:
+      chartId: 10
+      height: 50
+      sliceName: Eliminations per 10 seconds
+      uuid: c414a6eb-0150-4e47-8952-5325826ae2c6
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-2NVHEIN5
+  CHART-P150C9GH:
+    children: []
+    id: CHART-P150C9GH
+    meta:
+      chartId: 7
+      height: 50
+      sliceName: Running matches
+      uuid: 59c81d3d-8629-4f7b-b67a-bb8921c14177
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-2NVHEIN5
+  CHART-QMHX77PC:
+    children: []
+    id: CHART-QMHX77PC
+    meta:
+      chartId: 9
+      height: 50
+      sliceName: Alive players
+      uuid: 0f11d7dc-0709-459a-b3b1-73607ec6b98c
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-2NVHEIN5
+  CHART-IKHYLGTE:
+    children: []
+    id: CHART-IKHYLGTE
+    meta:
+      chartId: 11
+      height: 50
+      sliceName: Manifest completeness
+      uuid: 8ee1d52e-b5d6-4c2b-ac65-9cab3c97ce5d
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-2NVHEIN5
+metadata:
+  refresh_frequency: 15
+  timed_refresh_immune_slices: []
+  color_scheme: battleground
+  native_filter_configuration:
+  - id: NATIVE_FILTER-match-operations-run_id
+    name: Run Id
+    filterType: filter_select
+    targets:
+    - column:
+        name: run_id
+      datasetUuid: f1390a11-3da6-445d-8207-007f529e2ec9
+    defaultDataMask:
+      extraFormData:
+        filters:
+        - col: run_id
+          op: IN
+          val:
+          - 3c1881c3adbc49e3a7b52a68d420f51b
+      filterState:
+        value:
+        - 3c1881c3adbc49e3a7b52a68d420f51b
+        label: 3c1881c3adbc49e3a7b52a68d420f51b
+    cascadeParentIds: []
+    controlValues:
+      multiSelect: false
+      enableEmptyFilter: true
+      defaultToFirstItem: true
+      searchAllOptions: true
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+  - id: NATIVE_FILTER-match-operations-match_id
+    name: Match Id
+    filterType: filter_select
+    targets:
+    - column:
+        name: match_id
+      datasetUuid: f1390a11-3da6-445d-8207-007f529e2ec9
+    defaultDataMask: {}
+    cascadeParentIds: []
+    controlValues:
+      multiSelect: true
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      searchAllOptions: true
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+  expanded_slices: {}
+  color_scheme_domain:
+  - '#E8B45B'
+  - '#69B9C9'
+  - '#E36B67'
+  - '#8EBE86'
+  - '#BAA6D9'
+  shared_label_colors:
+  - match-1
+  map_label_colors: {}
+  label_colors: {}
+version: 1.0.0

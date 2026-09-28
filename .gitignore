@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+streaming/target/
+dbt/target/
+dbt/logs/
+artifacts/
+!artifacts/.gitkeep
+tableau/exports/*
+!tableau/exports/README.md
+dbt/.user.yml

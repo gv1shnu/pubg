@@ -1,0 +1,236 @@
+dashboard_title: Pipeline Reliability
+description: null
+css: .dashboard-content {background:#11151b;color:#e6eaf0;} .dashboard-component-chart-holder,.dashboard-component-tabs-content
+  {background:#1c232c!important;border-radius:8px;} .dashboard-component-header,.header-title,.chart-header,.dashboard-markdown
+  {color:#e6eaf0!important;} .dashboard-component-chart-holder table,.dashboard-component-chart-holder
+  th,.dashboard-component-chart-holder td {background:#1c232c!important;color:#e6eaf0!important;border-color:#37414e!important;}
+  .big_number_total {color:#e8b45b!important;}.dashboard-component-chart-holder .header-title,.dashboard-component-chart-holder
+  .slice-header,.dashboard-component-chart-holder [class*=Header] {color:#e6eaf0!important;}
+  .dashboard-component-chart-holder .header-line {color:#e8b45b!important;} .dashboard-component-chart-holder
+  svg text {fill:#c8d3df;}.dashboard-component-chart-holder .header-title a {color:#e6eaf0!important;}
+  .dashboard-component-chart-holder label {color:#c8d3df!important;}
+slug: pipeline-reliability
+certified_by: null
+certification_details: null
+published: true
+uuid: 74649901-d8c3-42f4-95b7-e5a0f5472b31
+position:
+  DASHBOARD_VERSION_KEY: v2
+  ROOT_ID:
+    id: ROOT_ID
+    type: ROOT
+    children:
+    - GRID_ID
+  GRID_ID:
+    id: GRID_ID
+    type: GRID
+    children:
+    - HEADER-pipeline-reliability
+    - ROW-pipeline-reliability-0
+    - ROW-pipeline-reliability-1
+    - ROW-pipeline-reliability-2
+    - ROW-N-9R6ITSSX
+    parents:
+    - ROOT_ID
+  HEADER-pipeline-reliability:
+    id: HEADER-pipeline-reliability
+    type: MARKDOWN
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      code: "### Pipeline Reliability\nSynthetic gameplay and server telemetry \xB7\
+        \ UTC \xB7 Project scoring, no official affiliation.\nMeasured installation-wide\
+        \ pipeline data. Missing metrics are unavailable, not zero."
+      height: 14
+      width: 12
+  ROW-pipeline-reliability-0:
+    id: ROW-pipeline-reliability-0
+    type: ROW
+    children:
+    - CHART-20
+    - CHART-21
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-20:
+    id: CHART-20
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-pipeline-reliability-0
+    meta:
+      chartId: 20
+      sliceName: Persisted events per second
+      width: 6
+      height: 42
+  CHART-21:
+    id: CHART-21
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-pipeline-reliability-0
+    meta:
+      chartId: 21
+      sliceName: Checkpoint-committed Kafka lag
+      width: 6
+      height: 42
+  ROW-pipeline-reliability-1:
+    id: ROW-pipeline-reliability-1
+    type: ROW
+    children:
+    - CHART-22
+    - CHART-23
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-22:
+    id: CHART-22
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-pipeline-reliability-1
+    meta:
+      chartId: 22
+      sliceName: Emitted-to-processed p95 (seconds)
+      width: 6
+      height: 42
+  CHART-23:
+    id: CHART-23
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-pipeline-reliability-1
+    meta:
+      chartId: 23
+      sliceName: Checkpoint duration (ms)
+      width: 6
+      height: 42
+  ROW-pipeline-reliability-2:
+    id: ROW-pipeline-reliability-2
+    type: ROW
+    children:
+    - CHART-24
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-24:
+    id: CHART-24
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-pipeline-reliability-2
+    meta:
+      chartId: 24
+      sliceName: Current measured counters and health
+      width: 12
+      height: 42
+  ROW-N-9R6ITSSX:
+    children:
+    - CHART-SM74AB4L
+    - CHART-6JE53FBL
+    - CHART-N8G1AOEZ
+    - CHART-W5LO0ZEM
+    - CHART-1HHXL2L3
+    id: ROW-N-9R6ITSSX
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    type: ROW
+    parents:
+    - ROOT_ID
+    - GRID_ID
+  CHART-SM74AB4L:
+    children: []
+    id: CHART-SM74AB4L
+    meta:
+      chartId: 23
+      height: 50
+      sliceName: Checkpoint duration (ms)
+      uuid: c06d4f40-aa8c-4b52-959d-5f2c85e7ba52
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-9R6ITSSX
+  CHART-6JE53FBL:
+    children: []
+    id: CHART-6JE53FBL
+    meta:
+      chartId: 20
+      height: 50
+      sliceName: Persisted events per second
+      uuid: 3103e701-62d8-4bf6-b8ae-92925da84287
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-9R6ITSSX
+  CHART-N8G1AOEZ:
+    children: []
+    id: CHART-N8G1AOEZ
+    meta:
+      chartId: 24
+      height: 50
+      sliceName: Current measured counters and health
+      uuid: 25ce64b5-a592-4d37-ade8-7f6a840031e2
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-9R6ITSSX
+  CHART-W5LO0ZEM:
+    children: []
+    id: CHART-W5LO0ZEM
+    meta:
+      chartId: 21
+      height: 50
+      sliceName: Checkpoint-committed Kafka lag
+      uuid: 1f36edf2-bfce-4b1d-84f9-09d1ffab23f8
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-9R6ITSSX
+  CHART-1HHXL2L3:
+    children: []
+    id: CHART-1HHXL2L3
+    meta:
+      chartId: 22
+      height: 50
+      sliceName: Emitted-to-processed p95 (seconds)
+      uuid: 31b90e42-5517-47a4-b8d7-e307110bb32c
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-9R6ITSSX
+metadata:
+  refresh_frequency: 15
+  timed_refresh_immune_slices: []
+  color_scheme: battleground
+  native_filter_configuration: []
+  expanded_slices: {}
+version: 1.0.0

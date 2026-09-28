@@ -1,0 +1,29 @@
+slice_name: Final placements
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 1__table
+  viz_type: table
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  query_mode: raw
+  all_columns:
+  - placement
+  - player_id
+  - match_id
+  - kills
+  - damage
+  - status
+  include_time: false
+  order_by_cols: []
+  page_length: 15
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+query_context: null
+cache_timeout: null
+uuid: 1a66e093-08e7-42dc-9b81-21534099fc15
+version: 1.0.0
+dataset_uuid: f1390a11-3da6-445d-8207-007f529e2ec9

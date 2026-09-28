@@ -1,0 +1,1409 @@
+{
+  "$defs": {
+    "Connected": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "player_connected",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Session"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "player_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "Connected",
+      "type": "object"
+    },
+    "Created": {
+      "additionalProperties": false,
+      "properties": {
+        "players": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "minItems": 2,
+          "title": "Players",
+          "type": "array"
+        },
+        "region": {
+          "title": "Region",
+          "type": "string"
+        },
+        "map": {
+          "title": "Map",
+          "type": "string"
+        },
+        "duration_seconds": {
+          "maximum": 600,
+          "minimum": 10,
+          "title": "Duration Seconds",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "players",
+        "region",
+        "map",
+        "duration_seconds"
+      ],
+      "title": "Created",
+      "type": "object"
+    },
+    "Damage": {
+      "additionalProperties": false,
+      "properties": {
+        "victim_id": {
+          "title": "Victim Id",
+          "type": "string"
+        },
+        "damage": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Damage",
+          "type": "integer"
+        },
+        "health_before": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Health Before",
+          "type": "integer"
+        },
+        "health_after": {
+          "maximum": 99,
+          "minimum": 0,
+          "title": "Health After",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "victim_id",
+        "damage",
+        "health_before",
+        "health_after"
+      ],
+      "title": "Damage",
+      "type": "object"
+    },
+    "DamageDealt": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "damage_dealt",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Damage"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "player_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "DamageDealt",
+      "type": "object"
+    },
+    "Disconnected": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "player_disconnected",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Session"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "player_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "Disconnected",
+      "type": "object"
+    },
+    "Elimination": {
+      "additionalProperties": false,
+      "properties": {
+        "victim_id": {
+          "title": "Victim Id",
+          "type": "string"
+        },
+        "placement": {
+          "maximum": 100,
+          "minimum": 2,
+          "title": "Placement",
+          "type": "integer"
+        },
+        "alive": {
+          "maximum": 99,
+          "minimum": 1,
+          "title": "Alive",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "victim_id",
+        "placement",
+        "alive"
+      ],
+      "title": "Elimination",
+      "type": "object"
+    },
+    "Finished": {
+      "additionalProperties": false,
+      "properties": {
+        "outcomes": {
+          "items": {
+            "$ref": "#/$defs/Outcome"
+          },
+          "maxItems": 100,
+          "minItems": 2,
+          "title": "Outcomes",
+          "type": "array"
+        },
+        "expected_gameplay_count": {
+          "minimum": 1,
+          "title": "Expected Gameplay Count",
+          "type": "integer"
+        },
+        "gameplay_sequence_max": {
+          "minimum": 1,
+          "title": "Gameplay Sequence Max",
+          "type": "integer"
+        },
+        "expected_event_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Expected Event Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "outcomes",
+        "expected_gameplay_count",
+        "gameplay_sequence_max",
+        "expected_event_ids"
+      ],
+      "title": "Finished",
+      "type": "object"
+    },
+    "MatchCreated": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Player Id"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "match_created",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Created"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "MatchCreated",
+      "type": "object"
+    },
+    "MatchFinished": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Player Id"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "match_finished",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Finished"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "MatchFinished",
+      "type": "object"
+    },
+    "MatchStarted": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Player Id"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "match_started",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Started"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "MatchStarted",
+      "type": "object"
+    },
+    "Outcome": {
+      "additionalProperties": false,
+      "properties": {
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "kills": {
+          "minimum": 0,
+          "title": "Kills",
+          "type": "integer"
+        },
+        "damage": {
+          "minimum": 0,
+          "title": "Damage",
+          "type": "integer"
+        },
+        "placement": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Placement",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "player_id",
+        "kills",
+        "damage",
+        "placement"
+      ],
+      "title": "Outcome",
+      "type": "object"
+    },
+    "PlayerEliminated": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "player_eliminated",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Elimination"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "player_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "PlayerEliminated",
+      "type": "object"
+    },
+    "Position": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "maximum": 1000.0,
+          "minimum": 0.0,
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "maximum": 1000.0,
+          "minimum": 0.0,
+          "title": "Y",
+          "type": "number"
+        },
+        "alive": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Alive",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "alive"
+      ],
+      "title": "Position",
+      "type": "object"
+    },
+    "PositionSample": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "player_position_sample",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Position"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "player_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "PositionSample",
+      "type": "object"
+    },
+    "Reconnected": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "title": "Player Id",
+          "type": "string"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "player_reconnected",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Session"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "player_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "Reconnected",
+      "type": "object"
+    },
+    "Server": {
+      "additionalProperties": false,
+      "properties": {
+        "cpu_pct": {
+          "maximum": 100.0,
+          "minimum": 0.0,
+          "title": "Cpu Pct",
+          "type": "number"
+        },
+        "memory_pct": {
+          "maximum": 100.0,
+          "minimum": 0.0,
+          "title": "Memory Pct",
+          "type": "number"
+        },
+        "latency_ms": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Latency Ms",
+          "type": "array"
+        },
+        "packets_sent": {
+          "minimum": 1,
+          "title": "Packets Sent",
+          "type": "integer"
+        },
+        "packets_lost": {
+          "minimum": 0,
+          "title": "Packets Lost",
+          "type": "integer"
+        },
+        "tick_ms": {
+          "exclusiveMinimum": 0.0,
+          "title": "Tick Ms",
+          "type": "number"
+        },
+        "target_tick_ms": {
+          "exclusiveMinimum": 0.0,
+          "title": "Target Tick Ms",
+          "type": "number"
+        },
+        "online_players": {
+          "maximum": 300,
+          "minimum": 0,
+          "title": "Online Players",
+          "type": "integer"
+        },
+        "incident": {
+          "title": "Incident",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "cpu_pct",
+        "memory_pct",
+        "latency_ms",
+        "packets_sent",
+        "packets_lost",
+        "tick_ms",
+        "target_tick_ms",
+        "online_players",
+        "incident"
+      ],
+      "title": "Server",
+      "type": "object"
+    },
+    "ServerSample": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Player Id"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "server_sample",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Server"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "ServerSample",
+      "type": "object"
+    },
+    "Session": {
+      "additionalProperties": false,
+      "properties": {
+        "session_id": {
+          "title": "Session Id",
+          "type": "string"
+        },
+        "connected": {
+          "title": "Connected",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "session_id",
+        "connected"
+      ],
+      "title": "Session",
+      "type": "object"
+    },
+    "Started": {
+      "additionalProperties": false,
+      "properties": {
+        "alive": {
+          "maximum": 100,
+          "minimum": 2,
+          "title": "Alive",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "alive"
+      ],
+      "title": "Started",
+      "type": "object"
+    },
+    "Zone": {
+      "additionalProperties": false,
+      "properties": {
+        "phase": {
+          "maximum": 10,
+          "minimum": 1,
+          "title": "Phase",
+          "type": "integer"
+        },
+        "radius_m": {
+          "exclusiveMinimum": 0.0,
+          "title": "Radius M",
+          "type": "number"
+        }
+      },
+      "required": [
+        "phase",
+        "radius_m"
+      ],
+      "title": "Zone",
+      "type": "object"
+    },
+    "ZoneChanged": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "producer_id": {
+          "minLength": 1,
+          "title": "Producer Id",
+          "type": "string"
+        },
+        "event_time": {
+          "format": "date-time",
+          "title": "Event Time",
+          "type": "string"
+        },
+        "emitted_at": {
+          "format": "date-time",
+          "title": "Emitted At",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 1,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "match_id": {
+          "minLength": 1,
+          "title": "Match Id",
+          "type": "string"
+        },
+        "server_id": {
+          "minLength": 1,
+          "title": "Server Id",
+          "type": "string"
+        },
+        "player_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Player Id"
+        },
+        "simulated": {
+          "const": true,
+          "title": "Simulated",
+          "type": "boolean"
+        },
+        "simulation_elapsed_seconds": {
+          "minimum": 0.0,
+          "title": "Simulation Elapsed Seconds",
+          "type": "number"
+        },
+        "event_type": {
+          "const": "zone_changed",
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Zone"
+        }
+      },
+      "required": [
+        "event_id",
+        "schema_version",
+        "run_id",
+        "producer_id",
+        "event_time",
+        "emitted_at",
+        "sequence",
+        "match_id",
+        "server_id",
+        "simulated",
+        "simulation_elapsed_seconds",
+        "event_type",
+        "payload"
+      ],
+      "title": "ZoneChanged",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "damage_dealt": "#/$defs/DamageDealt",
+      "match_created": "#/$defs/MatchCreated",
+      "match_finished": "#/$defs/MatchFinished",
+      "match_started": "#/$defs/MatchStarted",
+      "player_connected": "#/$defs/Connected",
+      "player_disconnected": "#/$defs/Disconnected",
+      "player_eliminated": "#/$defs/PlayerEliminated",
+      "player_position_sample": "#/$defs/PositionSample",
+      "player_reconnected": "#/$defs/Reconnected",
+      "server_sample": "#/$defs/ServerSample",
+      "zone_changed": "#/$defs/ZoneChanged"
+    },
+    "propertyName": "event_type"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/MatchCreated"
+    },
+    {
+      "$ref": "#/$defs/MatchStarted"
+    },
+    {
+      "$ref": "#/$defs/ZoneChanged"
+    },
+    {
+      "$ref": "#/$defs/MatchFinished"
+    },
+    {
+      "$ref": "#/$defs/DamageDealt"
+    },
+    {
+      "$ref": "#/$defs/PlayerEliminated"
+    },
+    {
+      "$ref": "#/$defs/PositionSample"
+    },
+    {
+      "$ref": "#/$defs/Connected"
+    },
+    {
+      "$ref": "#/$defs/Disconnected"
+    },
+    {
+      "$ref": "#/$defs/Reconnected"
+    },
+    {
+      "$ref": "#/$defs/ServerSample"
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

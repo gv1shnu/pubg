@@ -1,0 +1,35 @@
+slice_name: Alive players
+description: null
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_line
+params:
+  datasource: 3__table
+  viz_type: echarts_timeseries_line
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  x_axis: window_start
+  granularity_sqla: window_start
+  time_grain_sqla: null
+  metrics:
+  - expressionType: SQL
+    sqlExpression: MIN(alive_players)
+    label: Alive players
+    optionName: Alive players
+  groupby:
+  - match_id
+  show_legend: true
+  rich_tooltip: true
+  x_axis_time_format: '%H:%M:%S'
+  y_axis_format: ',.2f'
+  truncate_metric: true
+  only_total: true
+  show_value: false
+  markerEnabled: true
+query_context: null
+cache_timeout: null
+uuid: 0f11d7dc-0709-459a-b3b1-73607ec6b98c
+version: 1.0.0
+dataset_uuid: 467cb1e3-a601-42ee-acc2-57002936423a

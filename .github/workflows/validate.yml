@@ -1,0 +1,64 @@
+name: Validate
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      integration:
+        description: Run bounded real core integration (requires available Actions quota)
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11.11'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - run: pip install -r requirements.txt dbt-core==1.9.3 dbt-postgres==1.9.0
+      - run: pytest -q tests
+      - run: python -m simulator.contracts
+      - run: mvn -B -f streaming/pom.xml verify
+      - run: python scripts/cloud.py configure && docker compose config --quiet
+      - run: dbt parse --project-dir dbt --profiles-dir dbt
+        env:
+          TRANSFORM_PASSWORD: parse-only-no-connection
+  integration:
+    if: github.event_name == 'workflow_dispatch' && inputs.integration
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: make bootstrap
+      - run: make integration && make dbt
+      - run: python -m scripts.fault_acceptance
+      - run: python -m scripts.benchmark
+      - run: make export-tableau
+      - run: make bi-up
+      - run: docker compose --profile bi up -d --wait --wait-timeout 360 superset
+      - run: docker compose stop superset
+      - name: Stop runtime before building ops image
+        run: docker compose stop simulator taskmanager jobmanager prometheus collector kafka
+      - run: docker compose build airflow
+      - name: Exercise manual DAG
+        run: docker compose run --rm --no-deps airflow bash -c 'airflow db migrate && airflow dags test telemetry_maintenance 2026-01-01'
+      - if: always()
+        run: make export-artifacts
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: telemetry-evidence
+          path: |
+            artifacts/
+            tableau/exports/
+      - if: always()
+        run: docker compose --profile core --profile ops --profile bi down --volumes

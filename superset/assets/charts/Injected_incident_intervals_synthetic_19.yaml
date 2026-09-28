@@ -1,0 +1,32 @@
+slice_name: "Injected incident intervals \u2014 synthetic"
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 5__table
+  viz_type: table
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters:
+  - expressionType: SQL
+    sqlExpression: incident = true
+    clause: WHERE
+  query_mode: raw
+  all_columns:
+  - server_id
+  - window_start
+  - incident
+  - latency_p95_ms
+  - packet_loss_pct
+  - status
+  include_time: false
+  order_by_cols: []
+  page_length: 15
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+query_context: null
+cache_timeout: null
+uuid: 2cd00015-22f6-4a70-b135-8a17ad52a60f
+version: 1.0.0
+dataset_uuid: 9f9f87fe-f49b-4f21-a801-9c1c3d892e53

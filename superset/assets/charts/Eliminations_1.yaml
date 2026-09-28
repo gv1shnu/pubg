@@ -1,0 +1,23 @@
+slice_name: Eliminations
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 1__table
+  viz_type: big_number_total
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  metric:
+    expressionType: SQL
+    sqlExpression: SUM(kills)
+    label: Eliminations
+    optionName: Eliminations
+  y_axis_format: ',.0f'
+query_context: null
+cache_timeout: null
+uuid: 1657f0af-53b9-4d83-a4c7-2efe799b9e5b
+version: 1.0.0
+dataset_uuid: f1390a11-3da6-445d-8207-007f529e2ec9

@@ -1,0 +1,35 @@
+slice_name: Synthetic latency p95 (ms)
+description: null
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_line
+params:
+  datasource: 5__table
+  viz_type: echarts_timeseries_line
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  x_axis: window_start
+  granularity_sqla: window_start
+  time_grain_sqla: null
+  metrics:
+  - expressionType: SQL
+    sqlExpression: MAX(latency_p95_ms)
+    label: Synthetic latency p95 (ms)
+    optionName: Synthetic latency p95 (ms)
+  groupby:
+  - server_id
+  show_legend: true
+  rich_tooltip: true
+  x_axis_time_format: '%H:%M:%S'
+  y_axis_format: ',.2f'
+  truncate_metric: true
+  only_total: true
+  show_value: false
+  markerEnabled: true
+query_context: null
+cache_timeout: null
+uuid: db98baec-3fda-4027-8bd8-7e4f1410d38f
+version: 1.0.0
+dataset_uuid: 9f9f87fe-f49b-4f21-a801-9c1c3d892e53

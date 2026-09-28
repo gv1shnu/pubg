@@ -1,0 +1,11 @@
+name: battleground
+version: '0.1.0-dev.2'
+config-version: 2
+profile: battleground
+model-paths: [models]
+test-paths: [tests]
+models:
+  battleground:
+    +materialized: view
+flags:
+  send_anonymous_usage_stats: false

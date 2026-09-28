@@ -1,0 +1,724 @@
+[
+  {
+    "dashboard": "live-leaderboard",
+    "browser_wait_seconds": 12.396748582999862,
+    "chart_responses": [
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "Completed eligible matches": 1
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "run_id": "3c1881c3adbc49e3a7b52a68d420f51b",
+              "source_last_event_at": 1790606854829.043,
+              "processed_at": 1790606854930.0,
+              "pending_late": 0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "Winners": 1
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          100
+        ],
+        "sample_rows": [
+          [
+            {
+              "rank": 1,
+              "player_id": "player-093",
+              "match_id": "match-1",
+              "kills": 1,
+              "wins": 1,
+              "score": 11,
+              "damage": 100,
+              "placement": 1,
+              "average_placement": 1,
+              "status": "final",
+              "processed_at": 1790606854628.0
+            },
+            {
+              "rank": 2,
+              "player_id": "player-041",
+              "match_id": "match-1",
+              "kills": 4,
+              "wins": 0,
+              "score": 9,
+              "damage": 400,
+              "placement": 3,
+              "average_placement": 3,
+              "status": "final",
+              "processed_at": 1790606853925.0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "Damage dealt": 9900
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "Eliminations": 99
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "match_id": "match-1"
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          4
+        ],
+        "sample_rows": [
+          [
+            {
+              "run_id": "3c1881c3adbc49e3a7b52a68d420f51b"
+            },
+            {
+              "run_id": "4a594750bbb14208963c8e185b7408f6"
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "map": "Amber Basin"
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "region": "ap-south"
+            }
+          ]
+        ],
+        "error": null
+      }
+    ],
+    "has_error_text": false
+  },
+  {
+    "dashboard": "match-operations",
+    "browser_wait_seconds": 12.1188124170003,
+    "chart_responses": [
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "Running matches": 0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "match_id": "match-1",
+              "status": "final",
+              "actual_gameplay_count": 1253,
+              "matched_ids": 1253,
+              "expected_gameplay_count": 1253,
+              "processed_at": 1790606854930.0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "Reconciled matches": 1
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          7
+        ],
+        "sample_rows": [
+          [
+            {
+              "window_start": 1790606790000.0,
+              "match-1": 12.0
+            },
+            {
+              "window_start": 1790606800000.0,
+              "match-1": 16.0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          7
+        ],
+        "sample_rows": [
+          [
+            {
+              "window_start": 1790606790000.0,
+              "match-1": 88.0
+            },
+            {
+              "window_start": 1790606800000.0,
+              "match-1": 72.0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          100
+        ],
+        "sample_rows": [
+          [
+            {
+              "placement": 24,
+              "player_id": "player-075",
+              "match_id": "match-1",
+              "kills": 1,
+              "damage": 100,
+              "status": "final"
+            },
+            {
+              "placement": 38,
+              "player_id": "player-059",
+              "match_id": "match-1",
+              "kills": 1,
+              "damage": 100,
+              "status": "final"
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "match_id": "match-1"
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          4
+        ],
+        "sample_rows": [
+          [
+            {
+              "run_id": "3c1881c3adbc49e3a7b52a68d420f51b"
+            },
+            {
+              "run_id": "4a594750bbb14208963c8e185b7408f6"
+            }
+          ]
+        ],
+        "error": null
+      }
+    ],
+    "has_error_text": false
+  },
+  {
+    "dashboard": "server-health",
+    "browser_wait_seconds": 11.311552624998512,
+    "chart_responses": [
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          7
+        ],
+        "sample_rows": [
+          [
+            {
+              "window_start": 1790606790000.0,
+              "server-1": 30.7125
+            },
+            {
+              "window_start": 1790606800000.0,
+              "server-1": 32.49999999999999
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          7
+        ],
+        "sample_rows": [
+          [
+            {
+              "window_start": 1790606790000.0,
+              "server-1": 12.0
+            },
+            {
+              "window_start": 1790606800000.0,
+              "server-1": 38.4
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          4
+        ],
+        "sample_rows": [
+          [
+            {
+              "server_id": "server-1",
+              "window_start": 1790606800000.0,
+              "incident": true,
+              "latency_p95_ms": 218.936,
+              "packet_loss_pct": 3.872,
+              "status": "provisional"
+            },
+            {
+              "server_id": "server-1",
+              "window_start": 1790606810000.0,
+              "incident": true,
+              "latency_p95_ms": 218.2465,
+              "packet_loss_pct": 2.9379310344827587,
+              "status": "provisional"
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "server_id": "server-1",
+              "region": "ap-south",
+              "current_online_players": 0,
+              "current_connections": 0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          7
+        ],
+        "sample_rows": [
+          [
+            {
+              "window_start": 1790606790000.0,
+              "server-1": 17.85
+            },
+            {
+              "window_start": 1790606800000.0,
+              "server-1": 53.0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          7
+        ],
+        "sample_rows": [
+          [
+            {
+              "window_start": 1790606790000.0,
+              "server-1": 0.1866977829638273
+            },
+            {
+              "window_start": 1790606800000.0,
+              "server-1": 3.872
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          7
+        ],
+        "sample_rows": [
+          [
+            {
+              "window_start": 1790606790000.0,
+              "server-1": 38.861
+            },
+            {
+              "window_start": 1790606800000.0,
+              "server-1": 218.936
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "region": "ap-south"
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          1
+        ],
+        "sample_rows": [
+          [
+            {
+              "server_id": "server-1"
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          4
+        ],
+        "sample_rows": [
+          [
+            {
+              "run_id": "3c1881c3adbc49e3a7b52a68d420f51b"
+            },
+            {
+              "run_id": "4a594750bbb14208963c8e185b7408f6"
+            }
+          ]
+        ],
+        "error": null
+      }
+    ],
+    "has_error_text": false
+  },
+  {
+    "dashboard": "pipeline-reliability",
+    "browser_wait_seconds": 11.335553584000081,
+    "chart_responses": [
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          120
+        ],
+        "sample_rows": [
+          [
+            {
+              "sampled_at": 1790606315351.7449,
+              "Checkpoint duration (ms)": 40.0
+            },
+            {
+              "sampled_at": 1790606320405.133,
+              "Checkpoint duration (ms)": 40.0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          35
+        ],
+        "sample_rows": [
+          [
+            {
+              "metric": "broker_end_offset",
+              "labels": "{\"job\": \"pipeline\", \"topic\": \"gameplay.v1\", \"instance\": \"collector:8001\", \"partition\": \"0\"}",
+              "value": 88.0,
+              "sampled_at": 1790606915771.553
+            },
+            {
+              "metric": "broker_end_offset",
+              "labels": "{\"job\": \"pipeline\", \"topic\": \"gameplay.v1\", \"instance\": \"collector:8001\", \"partition\": \"1\"}",
+              "value": 3675.0,
+              "sampled_at": 1790606915771.553
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          122
+        ],
+        "sample_rows": [
+          [
+            {
+              "sampled_at": 1790606305263.4438,
+              "Checkpoint-committed Kafka lag": 8.0
+            },
+            {
+              "sampled_at": 1790606310303.4192,
+              "Checkpoint-committed Kafka lag": 60.0
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          121
+        ],
+        "sample_rows": [
+          [
+            {
+              "sampled_at": 1790606310303.4192,
+              "Persisted events per second": 1.3635799999999998
+            },
+            {
+              "sampled_at": 1790606315351.7449,
+              "Persisted events per second": 1.9528950000000003
+            }
+          ]
+        ],
+        "error": null
+      },
+      {
+        "http_status": 200,
+        "query_statuses": [
+          "success"
+        ],
+        "row_counts": [
+          80
+        ],
+        "sample_rows": [
+          [
+            {
+              "sampled_at": 1790606305263.4438,
+              "Emitted-to-processed p95 (seconds)": 0.0773377
+            },
+            {
+              "sampled_at": 1790606310303.4192,
+              "Emitted-to-processed p95 (seconds)": 0.10176519999999999
+            }
+          ]
+        ],
+        "error": null
+      }
+    ],
+    "has_error_text": false
+  }
+]

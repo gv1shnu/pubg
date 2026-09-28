@@ -1,0 +1,23 @@
+slice_name: Reconciled matches
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 2__table
+  viz_type: big_number_total
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  metric:
+    expressionType: SQL
+    sqlExpression: COUNT(*) FILTER (WHERE status IN ('final','corrected'))
+    label: Reconciled matches
+    optionName: Reconciled matches
+  y_axis_format: ',.0f'
+query_context: null
+cache_timeout: null
+uuid: 762376d8-ceb4-4bdb-b7c9-dc86ce295dba
+version: 1.0.0
+dataset_uuid: 386042dd-7662-4845-9b0f-8537981dd42d

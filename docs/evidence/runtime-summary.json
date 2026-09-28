@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0-dev.2",
+  "date": "2026-09-28",
+  "runtime": "Local Apple Silicon Docker via Colima",
+  "python_unit_passed": 69,
+  "junit_passed": 4,
+  "real_integration_passed": 4,
+  "dbt_models_passed": 12,
+  "dbt_tests_passed": 22,
+  "airflow_tasks_passed": 6,
+  "benchmark": {
+    "run_id": "3c1881c3adbc49e3a7b52a68d420f51b",
+    "duration_seconds": 64.46453404426575,
+    "sample_count": 9,
+    "hardware": {
+      "cpu_count": 6,
+      "ram_bytes": 12513529856,
+      "platform": "darwin",
+      "recorded_at": 1790606286.7006779
+    },
+    "peak_observed_container_memory_mib": 1725.0,
+    "peak_observed_container_cpu_percent": 84.01,
+    "maximum_sampled_installation_rate_per_second": 22.21818181818182,
+    "leaderboard_query_execution_ms": 214.739,
+    "rows": 1524,
+    "persisted_span_seconds": 62.306,
+    "emitted_to_processed_p95_seconds": 0.10649995
+  },
+  "fault": {
+    "run_id": "daacd01a3f8b4dc0b92e035b7999f772",
+    "checkpoint_before": 6,
+    "lag_before": 108.0,
+    "lag_paused": 553.0,
+    "status": "passed"
+  },
+  "live_browser": {
+    "run_id": "4a594750bbb14208963c8e185b7408f6",
+    "sql_poll_interval_seconds": 1,
+    "observed_db_kills": 76,
+    "automatic_refresh_verified": true,
+    "observed_db_to_browser_seconds": 12.936410583000907,
+    "initial_browser_kills": 73,
+    "latest_browser_kills": 97,
+    "incident_rows_in_database": 5,
+    "incident_table_visible": true
+  },
+  "superset": {
+    "dashboards": 4,
+    "saved_charts": 24,
+    "successful_browser_chart_and_filter_responses": 33,
+    "native_export_credentials_redacted": true
+  }
+}

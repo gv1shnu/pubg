@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-09-28T14:19:42.471967+00:00",
+  "version": "0.1.0-dev.1",
+  "python_ast_files": 18,
+  "json_parsed_files": 3,
+  "maven_xml": "pass",
+  "yaml_syntax": "pass",
+  "shell_syntax": "pass",
+  "schema_references": "pass",
+  "version_consistency": "pass",
+  "origin": "https://github.com/gv1shnu/pubg.git",
+  "trailing_whitespace": "pass",
+  "backend_executed": false,
+  "java_compiled": false,
+  "runtime_tests_executed": false,
+  "tableau_verified": false
+}

@@ -1,0 +1,28 @@
+slice_name: "Current sessions \u2014 do not sum across windows"
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 4__table
+  viz_type: table
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  query_mode: raw
+  all_columns:
+  - server_id
+  - region
+  - current_online_players
+  - current_connections
+  include_time: false
+  order_by_cols: []
+  page_length: 15
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+  server_pagination: false
+query_context: null
+cache_timeout: null
+uuid: 16b2de9f-2d11-4c58-aecb-60d4995f17d2
+version: 1.0.0
+dataset_uuid: 1b280a80-f554-4477-bb73-c4a5a338ae0f

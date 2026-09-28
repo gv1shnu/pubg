@@ -1,0 +1,23 @@
+slice_name: Damage dealt
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 1__table
+  viz_type: big_number_total
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  metric:
+    expressionType: SQL
+    sqlExpression: SUM(damage)
+    label: Damage dealt
+    optionName: Damage dealt
+  y_axis_format: ',.0f'
+query_context: null
+cache_timeout: null
+uuid: 0d60e70b-3b29-4412-9772-2eba63f3b58e
+version: 1.0.0
+dataset_uuid: f1390a11-3da6-445d-8207-007f529e2ec9

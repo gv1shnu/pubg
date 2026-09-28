@@ -1,0 +1,34 @@
+slice_name: "Player standings \u2014 project score"
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 1__table
+  viz_type: table
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  query_mode: raw
+  all_columns:
+  - rank
+  - player_id
+  - match_id
+  - kills
+  - wins
+  - score
+  - damage
+  - placement
+  - average_placement
+  - status
+  - processed_at
+  include_time: false
+  order_by_cols: []
+  page_length: 15
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+query_context: null
+cache_timeout: null
+uuid: 336a2c49-5515-4d72-8ed8-5ec3c026f12b
+version: 1.0.0
+dataset_uuid: f1390a11-3da6-445d-8207-007f529e2ec9

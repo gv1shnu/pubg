@@ -1,0 +1,29 @@
+slice_name: Manifest completeness
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 2__table
+  viz_type: table
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters: []
+  query_mode: raw
+  all_columns:
+  - match_id
+  - status
+  - actual_gameplay_count
+  - matched_ids
+  - expected_gameplay_count
+  - processed_at
+  include_time: false
+  order_by_cols: []
+  page_length: 15
+  table_timestamp_format: '%Y-%m-%d %H:%M:%S'
+query_context: null
+cache_timeout: null
+uuid: 8ee1d52e-b5d6-4c2b-ac65-9cab3c97ce5d
+version: 1.0.0
+dataset_uuid: 386042dd-7662-4845-9b0f-8537981dd42d

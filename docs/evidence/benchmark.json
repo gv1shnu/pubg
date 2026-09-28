@@ -1,0 +1,877 @@
+{
+  "run_id": "3c1881c3adbc49e3a7b52a68d420f51b",
+  "duration_seconds": 64.46453404426575,
+  "samples": [
+    {
+      "at": 1790606794.2688441,
+      "rate": 0.0,
+      "lag": 0.0,
+      "delay_p95_seconds": NaN,
+      "containers": [
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "0.05%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 57MB",
+          "CPUPerc": "1.41%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "28.21%",
+          "MemUsage": "433.3MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "26.3MB / 5.52MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.35MB",
+          "CPUPerc": "0.07%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "13.76%",
+          "MemUsage": "35.21MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "2.97MB / 1.2MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.4MB",
+          "CPUPerc": "1.21%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.26%",
+          "MemUsage": "320.1MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.2MB / 47.6MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "0.04%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.49MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "2.75MB / 2.62MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 11.8MB",
+          "CPUPerc": "6.36%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.39%",
+          "MemUsage": "362.4MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "3.43MB / 3.81MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 156MB",
+          "CPUPerc": "0.33%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.71%",
+          "MemUsage": "85.54MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "15.7MB / 16.7MB",
+          "PIDs": "17"
+        },
+        {
+          "BlockIO": "4.1kB / 0B",
+          "CPUPerc": "3.43%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.96MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "7.46kB / 35.2kB",
+          "PIDs": "14"
+        }
+      ]
+    },
+    {
+      "at": 1790606801.360589,
+      "rate": 0.8545454545454545,
+      "lag": 53.0,
+      "delay_p95_seconds": 1.0596857,
+      "containers": [
+        {
+          "BlockIO": "4.1kB / 225kB",
+          "CPUPerc": "2.03%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.96MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "25.1kB / 165kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "0.02%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 57.3MB",
+          "CPUPerc": "5.10%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "28.26%",
+          "MemUsage": "434MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "26.5MB / 5.79MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.38MB",
+          "CPUPerc": "0.06%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "13.30%",
+          "MemUsage": "34.04MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "3.03MB / 1.22MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.4MB",
+          "CPUPerc": "3.97%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.31%",
+          "MemUsage": "320.6MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.25MB / 47.6MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "0.02%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.49MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "2.81MB / 2.67MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 11.9MB",
+          "CPUPerc": "56.70%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.43%",
+          "MemUsage": "362.8MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "3.59MB / 3.98MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 156MB",
+          "CPUPerc": "1.35%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.74%",
+          "MemUsage": "85.69MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "15.9MB / 16.7MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "at": 1790606808.438026,
+      "rate": 5.1090909090909085,
+      "lag": 90.0,
+      "delay_p95_seconds": 0.537619,
+      "containers": [
+        {
+          "BlockIO": "4.1kB / 225kB",
+          "CPUPerc": "2.66%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.96MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "42.6kB / 294kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "1.34%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 57.3MB",
+          "CPUPerc": "4.05%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "28.54%",
+          "MemUsage": "438.4MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "26.6MB / 5.98MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.41MB",
+          "CPUPerc": "0.48%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "13.37%",
+          "MemUsage": "34.22MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "3.06MB / 1.24MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.4MB",
+          "CPUPerc": "0.72%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.13%",
+          "MemUsage": "318.7MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.26MB / 47.6MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "0.25%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.49MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "2.84MB / 2.7MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 12MB",
+          "CPUPerc": "4.09%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.42%",
+          "MemUsage": "362.7MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "3.73MB / 4.13MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 156MB",
+          "CPUPerc": "0.51%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.78%",
+          "MemUsage": "85.9MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "16MB / 16.7MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "at": 1790606815.518062,
+      "rate": 7.2729917451543695,
+      "lag": 207.0,
+      "delay_p95_seconds": 0.21890039999999886,
+      "containers": [
+        {
+          "BlockIO": "4.1kB / 225kB",
+          "CPUPerc": "2.16%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.96MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "60kB / 424kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "0.05%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 57.7MB",
+          "CPUPerc": "8.90%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "29.11%",
+          "MemUsage": "447.1MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "26.8MB / 6.2MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.41MB",
+          "CPUPerc": "2.19%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "12.79%",
+          "MemUsage": "32.73MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "3.12MB / 1.26MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.4MB",
+          "CPUPerc": "1.18%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.14%",
+          "MemUsage": "318.9MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.29MB / 47.6MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "2.03%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.49MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "2.89MB / 2.75MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 12.1MB",
+          "CPUPerc": "6.48%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.87%",
+          "MemUsage": "367.3MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "3.92MB / 4.33MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 157MB",
+          "CPUPerc": "0.20%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.80%",
+          "MemUsage": "86.02MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "16.1MB / 16.7MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "at": 1790606822.608342,
+      "rate": 9.4,
+      "lag": 92.0,
+      "delay_p95_seconds": 0.11056400000000001,
+      "containers": [
+        {
+          "BlockIO": "4.1kB / 225kB",
+          "CPUPerc": "1.58%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.96MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "77.7kB / 555kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "0.05%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 58MB",
+          "CPUPerc": "3.69%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "29.15%",
+          "MemUsage": "447.8MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "26.9MB / 6.42MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.41MB",
+          "CPUPerc": "0.00%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "13.24%",
+          "MemUsage": "33.9MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "3.16MB / 1.28MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.4MB",
+          "CPUPerc": "0.50%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.16%",
+          "MemUsage": "319MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.33MB / 47.6MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "0.02%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.49MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "2.92MB / 2.78MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 12.2MB",
+          "CPUPerc": "71.56%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.59%",
+          "MemUsage": "364.5MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "4.09MB / 4.5MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 157MB",
+          "CPUPerc": "0.21%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.84%",
+          "MemUsage": "86.2MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "16.3MB / 16.8MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "at": 1790606829.6817129,
+      "rate": 13.69090909090909,
+      "lag": 94.0,
+      "delay_p95_seconds": 0.10787279999999999,
+      "containers": [
+        {
+          "BlockIO": "4.1kB / 225kB",
+          "CPUPerc": "3.34%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.96MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "92.8kB / 666kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "0.07%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 58MB",
+          "CPUPerc": "4.90%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "29.07%",
+          "MemUsage": "446.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "27.1MB / 6.61MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.41MB",
+          "CPUPerc": "0.06%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "13.49%",
+          "MemUsage": "34.54MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "3.19MB / 1.29MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.5MB",
+          "CPUPerc": "1.28%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.16%",
+          "MemUsage": "319MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.34MB / 47.7MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "0.03%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.49MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "2.95MB / 2.81MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 12.8MB",
+          "CPUPerc": "6.47%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.53%",
+          "MemUsage": "363.9MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "4.25MB / 4.67MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 158MB",
+          "CPUPerc": "0.46%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.88%",
+          "MemUsage": "86.4MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "16.5MB / 16.8MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "at": 1790606836.7719738,
+      "rate": 15.837227485135553,
+      "lag": 212.0,
+      "delay_p95_seconds": 0.10778549999999999,
+      "containers": [
+        {
+          "BlockIO": "4.1kB / 225kB",
+          "CPUPerc": "4.14%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.96MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "113kB / 813kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "0.07%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 58.4MB",
+          "CPUPerc": "5.57%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "29.08%",
+          "MemUsage": "446.7MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "27.3MB / 6.84MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.46MB",
+          "CPUPerc": "0.17%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "13.75%",
+          "MemUsage": "35.21MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "3.25MB / 1.32MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.5MB",
+          "CPUPerc": "2.23%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.16%",
+          "MemUsage": "319.1MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.37MB / 47.7MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "0.03%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.49MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "3.01MB / 2.86MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 12.9MB",
+          "CPUPerc": "5.66%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.54%",
+          "MemUsage": "363.9MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "4.42MB / 4.85MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 159MB",
+          "CPUPerc": "1.86%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.91%",
+          "MemUsage": "86.56MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "16.6MB / 16.8MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "at": 1790606843.85437,
+      "rate": 20.07272727272727,
+      "lag": 211.0,
+      "delay_p95_seconds": 0.10733245,
+      "containers": [
+        {
+          "BlockIO": "4.1kB / 225kB",
+          "CPUPerc": "2.10%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.96MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "130kB / 944kB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "0.04%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 58.8MB",
+          "CPUPerc": "3.42%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "28.94%",
+          "MemUsage": "444.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "27.4MB / 7.05MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.46MB",
+          "CPUPerc": "0.00%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "12.98%",
+          "MemUsage": "33.23MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "3.29MB / 1.33MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.5MB",
+          "CPUPerc": "0.65%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.56%",
+          "MemUsage": "323.2MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.41MB / 47.7MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "0.09%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.48MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "3.04MB / 2.89MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 13MB",
+          "CPUPerc": "77.28%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.44%",
+          "MemUsage": "362.9MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "4.58MB / 5.02MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 159MB",
+          "CPUPerc": "0.43%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.95%",
+          "MemUsage": "86.77MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "16.8MB / 16.8MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "at": 1790606850.930378,
+      "rate": 22.21818181818182,
+      "lag": 96.0,
+      "delay_p95_seconds": 0.10731589999999999,
+      "containers": [
+        {
+          "BlockIO": "4.1kB / 225kB",
+          "CPUPerc": "2.94%",
+          "Container": "e93ced8ec85aacfe63c565ff7c25085a7ae32861ea059a264c57eee40b0839ec",
+          "ID": "e93ced8ec85a",
+          "MemPerc": "5.66%",
+          "MemUsage": "28.97MiB / 512MiB",
+          "Name": "battleground-telemetry-simulator-run-6e1ee73ca89d",
+          "NetIO": "148kB / 1.07MB",
+          "PIDs": "14"
+        },
+        {
+          "BlockIO": "24.6kB / 0B",
+          "CPUPerc": "0.06%",
+          "Container": "6f181a6d6275ec935804a97977e35731d7d617d4a82f61deeef9ca661b533bb1",
+          "ID": "6f181a6d6275",
+          "MemPerc": "26.34%",
+          "MemUsage": "404.5MiB / 1.5GiB",
+          "Name": "battleground-telemetry-superset-1",
+          "NetIO": "8.24MB / 14.5MB",
+          "PIDs": "53"
+        },
+        {
+          "BlockIO": "0B / 59.3MB",
+          "CPUPerc": "8.64%",
+          "Container": "3c4515e05d7ebef02738dd4a3c6c6ea1fdfe5f2e620c804156a9fcd1a59fad65",
+          "ID": "3c4515e05d7e",
+          "MemPerc": "28.40%",
+          "MemUsage": "436.2MiB / 1.5GiB",
+          "Name": "battleground-telemetry-taskmanager-1",
+          "NetIO": "27.6MB / 7.28MB",
+          "PIDs": "77"
+        },
+        {
+          "BlockIO": "573kB / 1.46MB",
+          "CPUPerc": "1.93%",
+          "Container": "3ab1a7e9eefb902709bdbd4416d3038cad678a72a33d5f9eeec57e97e8fda57f",
+          "ID": "3ab1a7e9eefb",
+          "MemPerc": "13.84%",
+          "MemUsage": "35.42MiB / 256MiB",
+          "Name": "battleground-telemetry-prometheus-1",
+          "NetIO": "3.35MB / 1.36MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "13.4MB / 69.5MB",
+          "CPUPerc": "3.25%",
+          "Container": "848f5cba77c16d20ee67dda93e1c6cf843ce25704ab7868f71478e04db042e85",
+          "ID": "848f5cba77c1",
+          "MemPerc": "31.59%",
+          "MemUsage": "323.5MiB / 1GiB",
+          "Name": "battleground-telemetry-jobmanager-1",
+          "NetIO": "2.45MB / 47.7MB",
+          "PIDs": "92"
+        },
+        {
+          "BlockIO": "0B / 258kB",
+          "CPUPerc": "2.27%",
+          "Container": "107064d1209eecee87cd0744b746b1c5cccc420d890b572a50e0c22775644d60",
+          "ID": "107064d1209e",
+          "MemPerc": "7.71%",
+          "MemUsage": "39.49MiB / 512MiB",
+          "Name": "battleground-telemetry-collector-1",
+          "NetIO": "3.1MB / 2.94MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "12.7MB / 13.1MB",
+          "CPUPerc": "5.16%",
+          "Container": "447d42d59bd682ebbac2b6eb8cbb8b6e2788287fdf720700b02ed879b5bf7abe",
+          "ID": "447d42d59bd6",
+          "MemPerc": "35.57%",
+          "MemUsage": "364.2MiB / 1GiB",
+          "Name": "battleground-telemetry-kafka-1",
+          "NetIO": "4.75MB / 5.19MB",
+          "PIDs": "91"
+        },
+        {
+          "BlockIO": "1.75MB / 159MB",
+          "CPUPerc": "0.25%",
+          "Container": "7c39f288695d01c42899b90dd4fa2b071838d4f414bf9aefcb2f156e33b117fe",
+          "ID": "7c39f288695d",
+          "MemPerc": "16.97%",
+          "MemUsage": "86.91MiB / 512MiB",
+          "Name": "battleground-telemetry-postgres-1",
+          "NetIO": "16.9MB / 16.8MB",
+          "PIDs": "17"
+        }
+      ]
+    }
+  ],
+  "sample_count": 9,
+  "hardware": {
+    "cpu_count": 6,
+    "ram_bytes": 12513529856,
+    "platform": "darwin",
+    "recorded_at": 1790606286.7006779
+  }
+}

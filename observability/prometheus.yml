@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+scrape_configs:
+  - job_name: producers
+    static_configs:
+      - targets: ['simulator:8000']
+  - job_name: flink
+    static_configs:
+      - targets: ['jobmanager:9249', 'taskmanager:9249']
+  - job_name: pipeline
+    static_configs:
+      - targets: ['collector:8001']

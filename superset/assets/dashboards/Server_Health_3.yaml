@@ -1,0 +1,382 @@
+dashboard_title: Server Health
+description: null
+css: .dashboard-content {background:#11151b;color:#e6eaf0;} .dashboard-component-chart-holder,.dashboard-component-tabs-content
+  {background:#1c232c!important;border-radius:8px;} .dashboard-component-header,.header-title,.chart-header,.dashboard-markdown
+  {color:#e6eaf0!important;} .dashboard-component-chart-holder table,.dashboard-component-chart-holder
+  th,.dashboard-component-chart-holder td {background:#1c232c!important;color:#e6eaf0!important;border-color:#37414e!important;}
+  .big_number_total {color:#e8b45b!important;}.dashboard-component-chart-holder .header-title,.dashboard-component-chart-holder
+  .slice-header,.dashboard-component-chart-holder [class*=Header] {color:#e6eaf0!important;}
+  .dashboard-component-chart-holder .header-line {color:#e8b45b!important;} .dashboard-component-chart-holder
+  svg text {fill:#c8d3df;}.dashboard-component-chart-holder .header-title a {color:#e6eaf0!important;}
+  .dashboard-component-chart-holder label {color:#c8d3df!important;}
+slug: server-health
+certified_by: null
+certification_details: null
+published: true
+uuid: 66ee6675-5d08-442b-9227-bf9e590cffc0
+position:
+  DASHBOARD_VERSION_KEY: v2
+  ROOT_ID:
+    id: ROOT_ID
+    type: ROOT
+    children:
+    - GRID_ID
+  GRID_ID:
+    id: GRID_ID
+    type: GRID
+    children:
+    - HEADER-server-health
+    - ROW-server-health-0
+    - ROW-server-health-1
+    - ROW-server-health-2
+    - ROW-server-health-3
+    - ROW-N-HOFY56AC
+    parents:
+    - ROOT_ID
+  HEADER-server-health:
+    id: HEADER-server-health
+    type: MARKDOWN
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      code: "### Server Health\nSynthetic gameplay and server telemetry \xB7 UTC \xB7\
+        \ Project scoring, no official affiliation.\nSelect exactly one run. Final\
+        \ means reconciled; provisional means incomplete. Read timestamps before interpreting\
+        \ freshness."
+      height: 14
+      width: 12
+  ROW-server-health-0:
+    id: ROW-server-health-0
+    type: ROW
+    children:
+    - CHART-13
+    - CHART-14
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-13:
+    id: CHART-13
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-server-health-0
+    meta:
+      chartId: 13
+      sliceName: "Current sessions \u2014 do not sum across windows"
+      width: 6
+      height: 42
+  CHART-14:
+    id: CHART-14
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-server-health-0
+    meta:
+      chartId: 14
+      sliceName: Synthetic latency p95 (ms)
+      width: 6
+      height: 42
+  ROW-server-health-1:
+    id: ROW-server-health-1
+    type: ROW
+    children:
+    - CHART-15
+    - CHART-16
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-15:
+    id: CHART-15
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-server-health-1
+    meta:
+      chartId: 15
+      sliceName: Packet loss (%)
+      width: 6
+      height: 42
+  CHART-16:
+    id: CHART-16
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-server-health-1
+    meta:
+      chartId: 16
+      sliceName: CPU (%)
+      width: 6
+      height: 42
+  ROW-server-health-2:
+    id: ROW-server-health-2
+    type: ROW
+    children:
+    - CHART-17
+    - CHART-18
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-17:
+    id: CHART-17
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-server-health-2
+    meta:
+      chartId: 17
+      sliceName: Memory (%)
+      width: 6
+      height: 42
+  CHART-18:
+    id: CHART-18
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-server-health-2
+    meta:
+      chartId: 18
+      sliceName: Tick duration (ms; target 16.667)
+      width: 6
+      height: 42
+  ROW-server-health-3:
+    id: ROW-server-health-3
+    type: ROW
+    children:
+    - CHART-19
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    meta:
+      background: BACKGROUND_TRANSPARENT
+  CHART-19:
+    id: CHART-19
+    type: CHART
+    children: []
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-server-health-3
+    meta:
+      chartId: 19
+      sliceName: "Injected incident intervals \u2014 synthetic"
+      width: 12
+      height: 42
+  ROW-N-HOFY56AC:
+    children:
+    - CHART-NH2KU46D
+    - CHART-1Y2L5URQ
+    - CHART-25Q7T6OA
+    - CHART-DEEUC584
+    - CHART-VVHBA1VY
+    - CHART-PONTBB03
+    - CHART-672VMN2M
+    id: ROW-N-HOFY56AC
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    type: ROW
+    parents:
+    - ROOT_ID
+    - GRID_ID
+  CHART-NH2KU46D:
+    children: []
+    id: CHART-NH2KU46D
+    meta:
+      chartId: 15
+      height: 50
+      sliceName: Packet loss (%)
+      uuid: 0eacb4a5-1db5-473d-a09a-cc5c78243104
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-HOFY56AC
+  CHART-1Y2L5URQ:
+    children: []
+    id: CHART-1Y2L5URQ
+    meta:
+      chartId: 18
+      height: 50
+      sliceName: Tick duration (ms; target 16.667)
+      uuid: 232e2b27-ed6c-47fa-b154-d16b6c6f946c
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-HOFY56AC
+  CHART-25Q7T6OA:
+    children: []
+    id: CHART-25Q7T6OA
+    meta:
+      chartId: 13
+      height: 50
+      sliceName: "Current sessions \u2014 do not sum across windows"
+      uuid: 16b2de9f-2d11-4c58-aecb-60d4995f17d2
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-HOFY56AC
+  CHART-DEEUC584:
+    children: []
+    id: CHART-DEEUC584
+    meta:
+      chartId: 16
+      height: 50
+      sliceName: CPU (%)
+      uuid: 877e18a6-7833-44a5-af4a-93695152aa46
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-HOFY56AC
+  CHART-VVHBA1VY:
+    children: []
+    id: CHART-VVHBA1VY
+    meta:
+      chartId: 14
+      height: 50
+      sliceName: Synthetic latency p95 (ms)
+      uuid: db98baec-3fda-4027-8bd8-7e4f1410d38f
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-HOFY56AC
+  CHART-PONTBB03:
+    children: []
+    id: CHART-PONTBB03
+    meta:
+      chartId: 17
+      height: 50
+      sliceName: Memory (%)
+      uuid: 27573ef9-ea16-40ad-8442-62231bd28707
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-HOFY56AC
+  CHART-672VMN2M:
+    children: []
+    id: CHART-672VMN2M
+    meta:
+      chartId: 19
+      height: 50
+      sliceName: "Injected incident intervals \u2014 synthetic"
+      uuid: 2cd00015-22f6-4a70-b135-8a17ad52a60f
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-HOFY56AC
+metadata:
+  refresh_frequency: 15
+  timed_refresh_immune_slices: []
+  color_scheme: battleground
+  native_filter_configuration:
+  - id: NATIVE_FILTER-server-health-run_id
+    name: Run Id
+    filterType: filter_select
+    targets:
+    - column:
+        name: run_id
+      datasetUuid: 9f9f87fe-f49b-4f21-a801-9c1c3d892e53
+    defaultDataMask:
+      extraFormData:
+        filters:
+        - col: run_id
+          op: IN
+          val:
+          - 3c1881c3adbc49e3a7b52a68d420f51b
+      filterState:
+        value:
+        - 3c1881c3adbc49e3a7b52a68d420f51b
+        label: 3c1881c3adbc49e3a7b52a68d420f51b
+    cascadeParentIds: []
+    controlValues:
+      multiSelect: false
+      enableEmptyFilter: true
+      defaultToFirstItem: true
+      searchAllOptions: true
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+  - id: NATIVE_FILTER-server-health-server_id
+    name: Server Id
+    filterType: filter_select
+    targets:
+    - column:
+        name: server_id
+      datasetUuid: 9f9f87fe-f49b-4f21-a801-9c1c3d892e53
+    defaultDataMask: {}
+    cascadeParentIds: []
+    controlValues:
+      multiSelect: true
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      searchAllOptions: true
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+  - id: NATIVE_FILTER-server-health-region
+    name: Region
+    filterType: filter_select
+    targets:
+    - column:
+        name: region
+      datasetUuid: 9f9f87fe-f49b-4f21-a801-9c1c3d892e53
+    defaultDataMask: {}
+    cascadeParentIds: []
+    controlValues:
+      multiSelect: true
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      searchAllOptions: true
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+  expanded_slices: {}
+  color_scheme_domain:
+  - '#E8B45B'
+  - '#69B9C9'
+  - '#E36B67'
+  - '#8EBE86'
+  - '#BAA6D9'
+  shared_label_colors:
+  - server-1
+  map_label_colors: {}
+  label_colors: {}
+version: 1.0.0

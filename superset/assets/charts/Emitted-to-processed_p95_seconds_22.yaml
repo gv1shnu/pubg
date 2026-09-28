@@ -1,0 +1,37 @@
+slice_name: Emitted-to-processed p95 (seconds)
+description: null
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_line
+params:
+  datasource: 6__table
+  viz_type: echarts_timeseries_line
+  time_range: No filter
+  row_limit: 1000
+  color_scheme: battleground
+  adhoc_filters:
+  - expressionType: SQL
+    sqlExpression: metric='delay_p95_seconds'
+    clause: WHERE
+  x_axis: sampled_at
+  granularity_sqla: sampled_at
+  time_grain_sqla: null
+  metrics:
+  - expressionType: SQL
+    sqlExpression: MAX(value)
+    label: Emitted-to-processed p95 (seconds)
+    optionName: Emitted-to-processed p95 (seconds)
+  groupby: []
+  show_legend: true
+  rich_tooltip: true
+  x_axis_time_format: '%H:%M:%S'
+  y_axis_format: ',.2f'
+  truncate_metric: true
+  only_total: true
+  show_value: false
+  markerEnabled: true
+query_context: null
+cache_timeout: null
+uuid: 31b90e42-5517-47a4-b8d7-e307110bb32c
+version: 1.0.0
+dataset_uuid: cd940999-2931-424f-887c-26b944183cc5

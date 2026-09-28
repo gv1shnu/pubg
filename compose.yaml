@@ -1,0 +1,206 @@
+name: battleground-telemetry
+x-python: &python
+  image: battleground-python:0.1.0-dev.2
+  build: .
+  working_dir: /app
+  environment: &app-env
+    TRANSFORM_PASSWORD: ${TRANSFORM_PASSWORD:?Run make configure}
+    PGHOST: postgres
+    PGDATABASE: telemetry
+    PGUSER: transformer
+    PGPASSWORD: ${TRANSFORM_PASSWORD:?Run make configure}
+    KAFKA_BOOTSTRAP: kafka:9092
+    DBT_PROFILES_DIR: /app/dbt
+    PYTHONPATH: /app
+  volumes:
+    - artifacts:/artifacts
+    - exports:/exports
+    - control:/control
+  networks: [backend]
+  mem_limit: 512m
+services:
+  postgres:
+    image: battleground-postgres:0.1.0-dev.2
+    build:
+      context: .
+      dockerfile: warehouse/Dockerfile
+    profiles: [core, ops, bi]
+    env_file: .env
+    environment:
+      POSTGRES_USER: telemetry_admin
+      POSTGRES_DB: telemetry
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks: [backend]
+    mem_limit: 512m
+    command: [postgres, -c, shared_buffers=128MB, -c, max_connections=40]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U telemetry_admin -d telemetry']
+      interval: 5s
+      timeout: 3s
+      retries: 24
+  kafka:
+    image: apache/kafka:3.9.0
+    profiles: [core]
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      KAFKA_LOG_RETENTION_HOURS: 6
+      KAFKA_LOG_RETENTION_BYTES: 268435456
+      KAFKA_HEAP_OPTS: -Xms256m -Xmx512m
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+    volumes: ['kafka:/var/lib/kafka/data']
+    networks: [backend]
+    mem_limit: 1g
+    healthcheck:
+      test: [CMD-SHELL, '/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --list >/dev/null']
+      interval: 10s
+      timeout: 10s
+      retries: 18
+  jobmanager:
+    image: battleground-flink:0.1.0-dev.2
+    build:
+      context: .
+      dockerfile: streaming/Dockerfile
+    profiles: [core]
+    command: jobmanager
+    environment:
+      WRITER_PASSWORD: ${WRITER_PASSWORD:?Run make configure}
+      FLINK_PROPERTIES: |
+        jobmanager.rpc.address: jobmanager
+        jobmanager.memory.process.size: 768m
+        taskmanager.memory.process.size: 1280m
+        taskmanager.numberOfTaskSlots: 2
+        parallelism.default: 1
+        metrics.reporter.prom.factory.class: org.apache.flink.metrics.prometheus.PrometheusReporterFactory
+        metrics.reporter.prom.port: 9249
+        state.checkpoints.dir: file:///checkpoints
+        state.savepoints.dir: file:///checkpoints/savepoints
+        execution.checkpointing.num-retained: 3
+    volumes: ['checkpoints:/checkpoints']
+    ports: ['127.0.0.1:8081:8081']
+    networks: [backend]
+    mem_limit: 1g
+  taskmanager:
+    image: battleground-flink:0.1.0-dev.2
+    profiles: [core]
+    command: taskmanager
+    environment:
+      WRITER_PASSWORD: ${WRITER_PASSWORD:?Run make configure}
+      FLINK_PROPERTIES: |
+        jobmanager.rpc.address: jobmanager
+        taskmanager.memory.process.size: 1280m
+        taskmanager.numberOfTaskSlots: 2
+        metrics.reporter.prom.factory.class: org.apache.flink.metrics.prometheus.PrometheusReporterFactory
+        metrics.reporter.prom.port: 9249
+    volumes: ['checkpoints:/checkpoints']
+    networks: [backend]
+    mem_limit: 1536m
+    depends_on: [jobmanager]
+  simulator:
+    <<: *python
+    profiles: [core]
+    environment:
+      KAFKA_BOOTSTRAP: kafka:9092
+      SEED: ${SEED:-42}
+      PLAYERS: ${PLAYERS:-100}
+      DURATION_SECONDS: ${DURATION_SECONDS:-240}
+      EVENT_RATE: ${EVENT_RATE:-20}
+      CONCURRENT_MATCHES: ${CONCURRENT_MATCHES:-1}
+      REGIONS: ${REGIONS:-ap-south,eu-west}
+      SCENARIO: ${SCENARIO:-normal}
+      DUPLICATE_PROBABILITY: ${DUPLICATE_PROBABILITY:-0}
+      LATENCY_SPIKE_PROBABILITY: ${LATENCY_SPIKE_PROBABILITY:-0}
+      DISCONNECT_BURST_PROBABILITY: ${DISCONNECT_BURST_PROBABILITY:-0}
+    command: [python, -m, simulator.main]
+  collector:
+    <<: *python
+    profiles: [core]
+    command: [python, -m, observability.collector]
+  prometheus:
+    image: battleground-prometheus:0.1.0-dev.2
+    build:
+      context: .
+      dockerfile: observability/Dockerfile
+    profiles: [core]
+    command: ['--config.file=/etc/prometheus/prometheus.yml', '--storage.tsdb.retention.time=6h', '--storage.tsdb.retention.size=256MB']
+    volumes: ['prometheus:/prometheus']
+    networks: [backend]
+    ports: ['127.0.0.1:9090:9090']
+    mem_limit: 256m
+  toolbox:
+    <<: *python
+    profiles: [ops]
+    environment:
+      <<: *app-env
+      WRITER_PASSWORD: ${WRITER_PASSWORD:?Run make configure}
+    command: [python, -m, scripts.ops, status]
+  airflow:
+    image: battleground-airflow:0.1.0-dev.2
+    build:
+      context: .
+      dockerfile: orchestration/Dockerfile
+    profiles: [ops]
+    environment:
+      <<: *app-env
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow_meta:${AIRFLOW_DB_PASSWORD}@postgres/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__DAGS_FOLDER: /app/orchestration
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: 'false'
+      AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: 60
+    command: standalone
+    networks: [backend]
+    volumes: ['artifacts:/artifacts', 'exports:/exports', 'airflow:/opt/airflow']
+    ports: ['127.0.0.1:8080:8080']
+    mem_limit: 1536m
+    depends_on:
+      postgres:
+        condition: service_healthy
+  superset:
+    image: battleground-superset:0.1.0-dev.2
+    build:
+      context: .
+      dockerfile: superset/Dockerfile
+    profiles: [bi]
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:?Run make configure}
+      SUPERSET_DB_PASSWORD: ${SUPERSET_DB_PASSWORD:?Run make configure}
+      SUPERSET_ADMIN_PASSWORD: ${SUPERSET_ADMIN_PASSWORD:?Run make configure}
+      TABLEAU_PASSWORD: ${TABLEAU_PASSWORD:?Run make configure}
+      SUPERSET_CONFIG_PATH: /app/pythonpath/superset_config.py
+    networks: [backend]
+    ports: ['127.0.0.1:8088:8088']
+    mem_limit: 1536m
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, curl, -fsS, http://localhost:8088/health]
+      interval: 10s
+      timeout: 5s
+      retries: 36
+
+networks:
+  backend: {}
+volumes:
+  postgres: {}
+  kafka: {}
+  checkpoints: {}
+  prometheus: {}
+  control: {}
+  airflow: {}
+  artifacts: {}
+  exports: {}
