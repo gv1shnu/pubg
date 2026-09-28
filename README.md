@@ -49,6 +49,6 @@ make ops-down
 
 Browser verification: install `requirements-browser.txt`, run `python -m playwright install chromium`, then `python -m scripts.verify_superset`. Images and measured browser responses are saved under ignored `artifacts/superset/`.
 
-[Guarantees](docs/guarantees.md) · [Metric definitions](docs/metrics.md) · [Operations](docs/operations.md) · [Superset setup](superset/README.md) · [BI decision](docs/bi-decision.md) · [Five-minute interview walkthrough](docs/interview.md)
+[Guarantees](docs/guarantees.md) · [Metric definitions](docs/metrics.md) · [Operations](docs/operations.md) · [Superset setup](superset/README.md) · [BI decision](docs/bi-decision.md) · [90-second / three-minute demo](docs/demo.md) · [Five-minute interview walkthrough](docs/interview.md)
 
 This is a single-broker portfolio deployment, not a production or high-availability service. Checkpoints do not imply end-to-end exactly-once delivery. Do not interpret a quiet completed run as a failed pipeline or a periodically queried dashboard as push streaming.
