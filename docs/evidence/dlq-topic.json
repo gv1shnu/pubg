@@ -1,0 +1,9 @@
+{
+  "topic": "dead-letter.v1",
+  "messages_read": 2,
+  "reasons": [
+    "schema validation failed: $: must be valid to one and only one schema, but 0 are valid",
+    "Unexpected character ('m' (code 109)): was expecting double-quote to start field name\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 2]"
+  ],
+  "required_metadata_present": true
+}

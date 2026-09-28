@@ -11,7 +11,7 @@ The owner selected Superset and authorized local Docker execution and developmen
 | Four-source pipeline | Bootstrap's four-player real run persisted 98 records and reached final outcomes |
 | Duplicate/repeated writes | Real integration kept canonical counts/outcomes stable |
 | Finish-first/shuffled data | Provisional status became final after required gameplay arrived |
-| Lateness/rejection | Bounded lateness accepted; excess lateness retained and corrected; malformed/version-invalid input rejected while valid input continued |
+| Lateness/rejection | Bounded lateness accepted; excess lateness retained and corrected; malformed/version-invalid input rejected while valid input continued; two actual Kafka dead-letter messages independently read |
 | Archive/replay | Checksum/count and isolated normalized outcome equivalence passed without changing original results |
 | Integration suite | Four real Kafka/Flink/PostgreSQL tests passed in 12.05 seconds |
 | Recovery | Checkpoint 6 preceded the fault; committed lag rose 108 → 553 during TaskManager outage, then drained to zero with a newer checkpoint and final outcomes |
@@ -39,6 +39,7 @@ A prior benchmark overlapped an Airflow build and is retained only in ignored lo
 
 - [Summary](evidence/runtime-summary.json), [benchmark samples](evidence/benchmark.json), [query plan](evidence/query-plan.json).
 - [Python result XML](evidence/python-unit.xml), [integration result XML](evidence/integration.xml), [browser responses](evidence/browser-evidence.json).
+- [Actual DLQ topic inspection](evidence/dlq-topic.json), [CSV snapshot manifest](evidence/snapshot-manifest.json).
 - [Superset native export](../superset/dashboards.zip) and reproducible [authoring code](../superset/bootstrap.py).
 - Dashboard screenshots under `docs/images/`; raw local logs, archives, dbt output and exports remain in ignored `artifacts/` and `tableau/exports/`. Credentials are excluded.
 

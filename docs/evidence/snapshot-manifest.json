@@ -1,0 +1,16 @@
+{
+  "mode": "snapshot, not live",
+  "simulated_gameplay": true,
+  "namespace": "live",
+  "run_id": "4a594750bbb14208963c8e185b7408f6",
+  "snapshot_generated_at": "2026-09-28T14:42:14.239280+00:00",
+  "row_counts": {
+    "leaderboard": 100,
+    "match_overview": 1,
+    "match_timeline": 7,
+    "server_health": 7,
+    "pipeline_health": 1598,
+    "freshness": 1
+  },
+  "pipeline_scope": "installation-wide actual metrics, not a run-level join"
+}
