@@ -1,6 +1,6 @@
 # Status — 0.1.0-dev.2
 
-Updated 2026-09-28. **Locally tested development prerelease on `dev`.** The selected analytics surface is Apache Superset; no Tableau authoring is required. Origin is `https://github.com/gv1shnu/pubg.git`.
+Updated 2026-09-28. **Locally tested development prerelease on `main`.** The selected analytics surface is Apache Superset; no Tableau authoring is required. Origin is `https://github.com/gv1shnu/pubg.git`.
 
 The actual Python → Kafka → Flink → PostgreSQL pipeline runs in local Docker. Four authenticated Superset dashboards contain 24 charts. dbt models/tests, the six-task Airflow maintenance DAG, archives/replay and operational monitoring have been exercised.
 

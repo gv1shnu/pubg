@@ -4,7 +4,7 @@
 
 `Python` · `Kafka (KRaft)` · `Flink (Java)` · `PostgreSQL` · `Apache Superset` · `dbt` · `Airflow` · `Prometheus` · `Docker Compose`
 
-[**Project showcase page**](https://gv1shnu.github.io/pubg/) · [Architecture](docs/architecture.md) · [Acceptance evidence](docs/acceptance.md) · [Demo script](docs/demo.md)
+[**Project showcase page**](https://www.vishnugandarapu.in/pubg/) · [Architecture](docs/architecture.md) · [Acceptance evidence](docs/acceptance.md) · [Demo script](docs/demo.md)
 
 ![Live Leaderboard dashboard in Apache Superset](docs/images/live-leaderboard.png)
 
@@ -46,7 +46,7 @@ flowchart LR
 
 ## Project status
 
-**0.1.0-dev.2 is a development prerelease on `dev`.** See [STATUS](STATUS.md) and [acceptance evidence](docs/acceptance.md) for verified results and limits. Superset is the selected dashboard surface. Tableau specifications are retained only as an optional reference.
+**0.1.0-dev.2 is a development prerelease on `main`.** See [STATUS](STATUS.md) and [acceptance evidence](docs/acceptance.md) for verified results and limits. Superset is the selected dashboard surface. Tableau specifications are retained only as an optional reference.
 
 ## Run the demo
 
