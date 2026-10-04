@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Battleground Telemetry</title>
+<meta name="description" content="Real-time analytics for a synthetic battle-royale game: Python, Kafka, Flink, PostgreSQL and Apache Superset, with measured latency, fault recovery and tests.">
+<meta property="og:title" content="Battleground Telemetry">
+<meta property="og:description" content="Kafka → Flink → PostgreSQL → Superset streaming analytics, with tested fault recovery and a measured 106 ms p95 processing delay.">
+<meta property="og:image" content="images/live-leaderboard.png">
+<meta property="og:type" content="website">
+<style>
+:root {
+  --bg: #f7f7f5; --surface: #ffffff; --text: #1c1d21; --muted: #5d606b;
+  --border: #e3e3df; --accent: #c98a12; --accent-soft: #fbf1dc; --code: #f0efea;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111318; --surface: #1a1d24; --text: #e9e9ec; --muted: #a0a3ad;
+    --border: #2a2e38; --accent: #e8ad3c; --accent-soft: #2b2416; --code: #22262f;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111318; --surface: #1a1d24; --text: #e9e9ec; --muted: #a0a3ad;
+  --border: #2a2e38; --accent: #e8ad3c; --accent-soft: #2b2416; --code: #22262f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 1080px; margin: 0 auto; padding: 0 16px 64px; }
+a { color: var(--accent); }
+header { padding: 64px 0 32px; }
+.eyebrow { color: var(--accent); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 13px; }
+h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; margin: 8px 0 16px; }
+h2 { font-size: 26px; margin: 56px 0 16px; }
+h3 { font-size: 18px; margin: 0 0 6px; }
+.lede { font-size: 19px; color: var(--muted); max-width: 720px; margin: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 24px; padding: 0; list-style: none; }
+.tags li { background: var(--code); border: 1px solid var(--border); border-radius: 999px; padding: 2px 12px; font-size: 14px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #1c1d21; }
+.hero { margin-top: 32px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: block; }
+img { max-width: 100%; height: auto; display: block; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 12px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.stat b { display: block; font-size: 30px; color: var(--accent); line-height: 1.2; }
+.stat span { color: var(--muted); font-size: 14px; }
+.pipeline { display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; }
+.stage { flex: 1 1 150px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+.stage small { color: var(--muted); display: block; font-size: 14px; }
+.arrow { align-self: center; color: var(--muted); font-size: 20px; }
+@media (max-width: 640px) { .arrow { display: none; } }
+.side { color: var(--muted); font-size: 15px; margin-top: 12px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.card p { margin: 0; color: var(--muted); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: 20px; }
+figure { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+figure a { display: block; height: 260px; overflow: hidden; border-bottom: 1px solid var(--border); }
+figure img { width: 100%; }
+figcaption { padding: 14px 16px; color: var(--muted); font-size: 15px; }
+figcaption strong { color: var(--text); display: block; }
+pre { background: var(--code); border: 1px solid var(--border); border-radius: 10px; padding: 16px; overflow-x: auto; font-size: 14px; }
+.note { background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; font-size: 15px; }
+footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 64px; padding-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="eyebrow">Data engineering portfolio project</div>
+  <h1>Battleground Telemetry</h1>
+  <p class="lede">Real-time analytics for a synthetic battle-royale game. Four independent event sources stream through Kafka and Flink into PostgreSQL, and live Apache Superset dashboards show the results. The pipeline stays correct when events arrive late, out of order or duplicated.</p>
+  <ul class="tags">
+    <li>Python</li><li>Kafka (KRaft)</li><li>Flink (Java)</li><li>PostgreSQL</li><li>Apache Superset</li><li>dbt</li><li>Airflow</li><li>Prometheus</li><li>Docker Compose</li>
+  </ul>
+  <div class="buttons">
+    <a class="btn primary" href="https://github.com/gv1shnu/pubg">View the code on GitHub</a>
+    <a class="btn" href="https://github.com/gv1shnu/pubg/blob/dev/docs/acceptance.md">Acceptance evidence</a>
+  </div>
+  <a class="hero" href="images/live-leaderboard.png"><img src="images/live-leaderboard.png" alt="Live Leaderboard dashboard showing player ranks, kills, damage and placement" width="1440" height="1173"></a>
+</header>
+
+<section>
+  <h2>Measured results</h2>
+  <div class="stats">
+    <div class="stat"><b>106 ms</b><span>p95 emitted-to-processed delay, 100-player benchmark</span></div>
+    <div class="stat"><b>1,524</b><span>canonical records persisted in a one-minute run</span></div>
+    <div class="stat"><b>553 → 0</b><span>Kafka lag drained after a TaskManager failure, results unchanged</span></div>
+    <div class="stat"><b>12.9 s</b><span>new database value seen on an auto-refreshing dashboard</span></div>
+    <div class="stat"><b>99</b><span>tests passed: Python, Java, integration and dbt</span></div>
+    <div class="stat"><b>24</b><span>charts across four dashboards, all authored in code</span></div>
+  </div>
+  <p class="side">Observed in single local runs on a 6-CPU, 12 GB Docker VM. These are measurements, not production capacity guarantees.</p>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <div class="pipeline">
+    <div class="stage"><h3>Simulator</h3><small>Python. Match, gameplay, session and server sources on independent schedules.</small></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="stage"><h3>Kafka</h3><small>KRaft broker with versioned JSON contracts per topic.</small></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="stage"><h3>Flink</h3><small>Validation, 24-hour dedupe, watermarks, windows and checkpoints.</small></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="stage"><h3>PostgreSQL</h3><small>Canonical facts, manifest reconciliation and live views.</small></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="stage"><h3>Superset</h3><small>Four dashboards that refresh every 15 seconds.</small></div>
+  </div>
+  <p class="side">Alongside the stream: rejected and late events go to dead-letter topics, dbt builds historical marts with tests, Airflow runs archive/reconcile/dbt/export batches, a Parquet archive supports replay, and Prometheus feeds real pipeline metrics into the reliability dashboard.</p>
+</section>
+
+<section>
+  <h2>Engineering highlights</h2>
+  <div class="cards">
+    <div class="card"><h3>Correct under messy delivery</h3><p>Duplicates leave results unchanged. Kill and placement counts come from immutable facts, not retried increments. Results stay provisional until they match the source manifest.</p></div>
+    <div class="card"><h3>Late and bad data handled</h3><p>Bounded lateness is accepted. Very late events are retained and corrected after reconciliation. Malformed input goes to a dead-letter topic while valid input keeps flowing.</p></div>
+    <div class="card"><h3>Fault recovery tested</h3><p>A checkpoint was taken, then the Flink TaskManager was stopped. Lag grew while it was down, and processing resumed from a newer checkpoint with identical outcomes.</p></div>
+    <div class="card"><h3>Archive and replay</h3><p>Runs are archived to Parquet with checksums and replayed into an isolated namespace. Replayed outcomes are compared against the originals.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Dashboards</h2>
+  <div class="gallery">
+    <figure><a href="images/live-leaderboard.png"><img src="images/live-leaderboard.png" alt="Live Leaderboard dashboard" width="1440" height="1173"></a><figcaption><strong>Live Leaderboard</strong>Player ranks, kills, damage and placement for one run, each marked provisional or final.</figcaption></figure>
+    <figure><a href="images/match-operations.png"><img src="images/match-operations.png" alt="Match Operations dashboard" width="1440" height="1333"></a><figcaption><strong>Match Operations</strong>Running vs reconciled matches, alive players, eliminations over time and manifest completeness.</figcaption></figure>
+    <figure><a href="images/server-health.png"><img src="images/server-health.png" alt="Server Health dashboard" width="1440" height="1685"></a><figcaption><strong>Server Health</strong>Synthetic latency p95, packet loss, CPU, memory and tick duration, with injected incidents labelled.</figcaption></figure>
+    <figure><a href="images/pipeline-reliability.png"><img src="images/pipeline-reliability.png" alt="Pipeline Reliability dashboard" width="1440" height="1333"></a><figcaption><strong>Pipeline Reliability</strong>Measured throughput, checkpoint-committed Kafka lag, processing delay and checkpoint duration.</figcaption></figure>
+  </div>
+  <p class="side">Click any dashboard to see it full size.</p>
+</section>
+
+<section>
+  <h2>Run it yourself</h2>
+  <p>Needs Docker Compose, Python 3 and about 12 GB of RAM for Docker.</p>
+<pre><code>git clone https://github.com/gv1shnu/pubg.git && cd pubg
+make bootstrap   # build, migrate, create topics, submit the Flink job
+make demo        # 100-player match, about four minutes
+make bi-up       # create the four Superset dashboards
+# open http://localhost:8088</code></pre>
+  <p class="note">Single-broker portfolio deployment, not a production or high-availability service. All game and server data is synthetic, with no official PUBG affiliation. See <a href="https://github.com/gv1shnu/pubg/blob/dev/docs/guarantees.md">guarantees and limits</a>.</p>
+</section>
+
+<footer>
+  Battleground Telemetry · <a href="https://github.com/gv1shnu/pubg">github.com/gv1shnu/pubg</a> · Raw evidence: <a href="evidence/runtime-summary.json">runtime summary</a>, <a href="evidence/benchmark.json">benchmark samples</a>
+</footer>
+</main>
+</body>
+</html>
